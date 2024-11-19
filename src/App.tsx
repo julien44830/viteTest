@@ -1,9 +1,12 @@
+import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import Count from "./component/Count";
 import "./App.css";
 
 function App() {
+    const [count, setCount] = useState<number>(0);
+
     return (
         <>
             <div>
@@ -28,8 +31,11 @@ function App() {
                     />
                 </a>
             </div>
-            <h1>Vite + React</h1>
-            <Count />
+            <h1>count = {count}</h1>
+            <Count
+                count={count}
+                setCount={setCount}
+            />
             <p className="read-the-docs">
                 Click on the Vite and React logos to learn more
             </p>
