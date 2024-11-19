@@ -1,10 +1,12 @@
-import { useState } from "react";
+type CountProps = {
+    count: number;
+    setCount: (value: number) => void;
+};
 
-export default function Count() {
-    const [count, setCount] = useState<number>(0);
+export default function Count({ count, setCount }: CountProps) {
     return (
         <div className="card">
-            <button onClick={() => setCount((count) => count + 1)}>
+            <button onClick={() => setCount(count + 1)}>
                 count is {count}
             </button>
             <p>
